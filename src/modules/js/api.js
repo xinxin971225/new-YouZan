@@ -24,7 +24,7 @@ let url = {
 
 //开发环境和真实环境的切换
 // let host = ''
-let host = '//rap2.taobao.org:38080/app/mock'
+let host = 'http://rap2.taobao.org:38080/app/mock'
 
 for(let key in url ){
     if(url.hasOwnProperty(key)) {
