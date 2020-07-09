@@ -9,7 +9,8 @@ import url from 'js/api.js'
 import Volecity from 'velocity-animate'
 import Cart from 'js/cartService.js'
 import fetch from 'js/fetch.js'
-
+import mockData from 'js/mockData.js'
+console.log(mockData.cartData)
 
 new Vue({
   el: '.container',
@@ -92,8 +93,8 @@ new Vue({
   },
   methods: {
     getList() {
-      axios.get(url.cartLists).then(res => {
-        let lists = res.data.cartList
+      // axios.get(url.cartLists).then(res => {
+        let lists = mockData.cartData
         lists.forEach(shop => {
           shop.checked = true
           shop.removeChecked = false
@@ -105,7 +106,7 @@ new Vue({
           })
         })
         this.lists = lists
-      })
+      // })
     },
     selectGood(shop,good) {
       let attr = this.editingShop ? 'removeChecked' : 'checked'
@@ -145,21 +146,20 @@ new Vue({
       // }).then(res => {
       //   good.number--
       // })
-      Cart.reduce(good.id).then(res => {
+      // Cart.reduce(good.id).then(res => {
         good.number--
-      })
+      // })
     },
     reduceTo(good) {
-      if(good.number===1) return
       // axios.post(url.cartReduce, {
       //   id: good.id,
       //   number: 1
       // }).then(res => {
       //   good.number--
       // })
-      Cart.reduce(good.id).then(res => {
+      // Cart.reduce(good.id).then(res => {
         good.number++
-      })
+      // })
     },
     remove(shop,shopIndex,good,goodIndex) {
       this.removePopup = true

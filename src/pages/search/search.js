@@ -2,14 +2,16 @@ import 'css/common.css'
 import './search.css'
 
 import Vue from 'vue'
-import axios from 'axios'
-import url from 'js/api.js'
+// import axios from 'axios'
+// import url from 'js/api.js'
 import qs from 'qs'
 import Velocity from 'velocity-animate'
+import mockData from 'js/mockData.js'
 
 let {keyword, id} = qs.parse(location.search.substr(1))
 import mixin from 'js/mixin.js'
 
+console.log(mockData.searchList)
 new Vue({
     el:'.container',
     data:{
@@ -22,9 +24,7 @@ new Vue({
     },
     methods:{
         getSearchList(){
-            axios.get(url.searchList, {keyword, id}).then(res => {
-                this.searchList = res.data.lists
-            })
+                this.searchList = mockData.searchList
         },
         move() {
             let scrollTop = document.body.scrollTop || document.documentElement.scrollTop

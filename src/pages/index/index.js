@@ -2,8 +2,8 @@ import 'css/common.css'
 import './index.css'
 
 import Vue from 'vue'
-import axios from 'axios'
-import url from 'js/api.js'
+// import axios from 'axios'
+// import url from 'js/api.js'
 import mockData from 'js/mockData.js'
 
 import { InfiniteScroll } from 'mint-ui';
@@ -11,8 +11,6 @@ Vue.use(InfiniteScroll)
 
 import Foot from 'components/Foot.vue'
 import Swipe from 'components/Swipe.vue'
-
-console.log(mockData.listsdata())
 
 let app = new Vue({
     el: '#app',

@@ -7,15 +7,17 @@ import './goods_sku.css'
 import './goods_transition.css'
 
 import Vue from 'vue'
-import url from 'js/api.js'
-import axios from 'axios'
+// import url from 'js/api.js'
+// import axios from 'axios'
 import mixin from 'js/mixin.js'
 import qs from 'qs'
 import Swipe from 'components/Swipe.vue'
+import mockData from 'js/mockData.js'
 
 let {id} = qs.parse(location.search.substr(1))
 
 let detailTab = ['商品详情','本店成交']
+
 
 new Vue({
     el:'#app',
@@ -37,16 +39,14 @@ new Vue({
     },
     methods:{
         getDetails(){
-            axios.get(url.details,{id}).then(res =>{
-                this.details = res.data.data
+                this.details = mockData.goodsData.details
                 this.bannerLists = []
                 this.details.imgs.forEach(item =>{
                     this.bannerLists.push({
-                        clickUrl: '',
+                        clickUrl: '#',
                         img: item
                     })
                 })
-            })
         },
         changeTab(index){
             this.tabIndex = index
@@ -55,9 +55,7 @@ new Vue({
             }
         },
         getDeal(){
-            axios.get(url.deal,{id}).then(res =>{
-                this.dealLists = res.data.data.lists
-            })
+                this.dealLists = mockData.goodsData.dealLists
         },
         chooseSku(type) {
             this.skuType = type
@@ -68,16 +66,16 @@ new Vue({
             this.skuNum += num
         },
         addCart(){
-            axios.post(url.addCart, {id, number: this.skuNum}).then(res => {
-                if(res.data.status === 200 ){
+            // axios.post(url.addCart, {id, number: this.skuNum}).then(res => {
+            //     if(res.data.status === 200 ){
                   this.isAddCart = true
                   this.showSku = false
                   this.showAddMessage = true
                   setTimeout(() => {
                     this.showAddMessage = false
                   },1000)
-                }
-            })
+                // }
+            // })
         }
     },
     components:{
