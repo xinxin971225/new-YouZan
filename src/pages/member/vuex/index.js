@@ -41,9 +41,9 @@ const store = new Vuex.Store({
     },
     actions: {
         getLists({commit}) {
-          Address.list().then(res => {
+        //   Address.list().then(res => {
             commit('init', mockData.addressData)
-          })
+        //   })
         },
         addAction({commit},instance) {
             Address.add(instance).then(res => {
