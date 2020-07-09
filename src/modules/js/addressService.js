@@ -1,5 +1,6 @@
 import fetch from 'js/fetch.js'
 import url from 'js/api.js'
+import mockData from 'js/mockData.js'
 
 class Address {
 

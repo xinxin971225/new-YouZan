@@ -2,8 +2,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
-
+import mockData from 'js/mockData.js'
 import Address from 'js/addressService.js'
+
 //创建store实例
 const store = new Vuex.Store({
     state: {
@@ -41,7 +42,7 @@ const store = new Vuex.Store({
     actions: {
         getLists({commit}) {
           Address.list().then(res => {
-            commit('init', res.data.lists)
+            commit('init', mockData.addressData)
           })
         },
         addAction({commit},instance) {

@@ -144,7 +144,7 @@ let mockData = {
             id: Random.natural(10000, 100000),
             img: Mock.mock('@img(90x90,@color)'),
             number: Random.natural(1, 10),
-            price:Random.float(10,100,2,2),
+            price: Random.float(10, 100, 2, 2),
             sku: Random.cword(3) + ',' + Random.cword(3) + ',' + Random.cword(3),
             title: Random.ctitle(4) + '' + Random.ctitle(4) + '' + Random.ctitle(4)
         }]
@@ -155,7 +155,7 @@ let mockData = {
             id: Random.natural(10000, 100000),
             img: Mock.mock('@img(90x90,@color)'),
             number: Random.natural(1, 10),
-            price:Random.float(10,100,2,2),
+            price: Random.float(10, 100, 2, 2),
             sku: Random.cword(3) + ',' + Random.cword(3) + ',' + Random.cword(3),
             title: Random.ctitle(4) + '' + Random.ctitle(4) + '' + Random.ctitle(4)
         }]
@@ -166,10 +166,59 @@ let mockData = {
             id: Random.natural(10000, 100000),
             img: Mock.mock('@img(90x90,@color)'),
             number: Random.natural(1, 10),
-            price:Random.float(10,100,2,2),
+            price: Random.float(10, 100, 2, 2),
             sku: Random.cword(3) + ',' + Random.cword(3) + ',' + Random.cword(3),
             title: Random.ctitle(4) + '' + Random.ctitle(4) + '' + Random.ctitle(4)
         }]
+    }]),
+    addressData: Mock.mock([{
+        address: Random.ctitle(3),
+        cityName: Random.city(),
+        cityValue: Random.zip(),
+        districtName: Random.county(),
+        districtValue: Random.zip(),
+        id: Random.natural(10000, 100000),
+        isDefault: Random.boolean(),
+        name: Random.cname(),
+        provinceName: Random.province(),
+        provinceValue: Random.zip(),
+        tel: 88888866
+    }, {
+        address: Random.ctitle(3),
+        cityName: Random.city(),
+        cityValue: Random.zip(),
+        districtName: Random.county(),
+        districtValue: Random.zip(),
+        id: Random.natural(10000, 100000),
+        isDefault: Random.boolean(),
+        name: Random.cname(),
+        provinceName: Random.province(),
+        provinceValue: Random.zip(),
+        tel: 88888866
+    }, {
+        address: Random.ctitle(3),
+        cityName: Random.city(),
+        cityValue: Random.zip(),
+        districtName: Random.county(),
+        districtValue: Random.zip(),
+        id: Random.natural(10000, 100000),
+        isDefault: Random.boolean(),
+        name: Random.cname(),
+        provinceName: Random.province(),
+        provinceValue: Random.zip(),
+        tel: 88888866
+    }, {
+        address: Random.ctitle(3),
+        cityName: Random.city(),
+        cityValue: Random.zip(),
+        districtName: Random.county(),
+        districtValue: Random.zip(),
+        id: Random.natural(10000, 100000),
+        isDefault: Random.boolean(),
+        name: Random.cname(),
+        provinceName: Random.province(),
+        provinceValue: Random.zip(),
+        tel: 88888866
     }])
 }
 
